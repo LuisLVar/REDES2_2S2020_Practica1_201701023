@@ -1,0 +1,47 @@
+<!-- Navigation -->
+<header class="navbar navbar-expand navbar-dark bg-dark fixed-top flex-md-row ">
+    <div class="container">
+        <a class="navbar-brand" routerLink="inicio">
+            <img src="https://i.pinimg.com/originals/a3/01/83/a30183675a80effec0f944f38025d0f1.jpg" style="width: 30px; height: 30px;" class="rounded-circle">
+            <span> My New Kicks</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/inicio"><i class="fas fa-id-badge"></i> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/productos"><i class="fas fa-mobile-alt"></i> Productos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<br><br>
+
+<div class="container p-4">
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <img src="https://images.unsplash.com/photo-1579298245158-33e8f568f7d3?ixlib=rb-1.2.1&w=1000&q=80" class="img-fluid rounded-circle" alt="Responsive image">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let producto of productos">
+            <div class="card border-secondary shadow p-3 mb-5 rounded">
+                <div class="card-header bg-light text-dark d-flex justify-content-between align-items-center">
+                    {{producto.nombre}}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <img src={{producto.imagen}} class="img-fluid rounded" alt="Responsive image">
+                    </div>
+                    <hr>
+                    <button type="button " class="btn btn-outline-success mr-1 " (click)="comprarProducto(producto) ">Informacion</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
